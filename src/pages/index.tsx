@@ -1,19 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { Container } from '../styles/pages/Home';
+import Content from '../content/pages/Home';
+import Layout from '../components/Layout';
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <Layout>
       <Head>
         <title>Home</title>
       </Head>
 
-      <h1>Dicas de uso</h1>
-      <p> ⇨ Importar imagens svg como componente react</p>
-      <p> ⇨ Declarar components como const's do tipo React.FC</p>
-    </Container>
+      <Content />
+    </Layout>
   );
 };
 

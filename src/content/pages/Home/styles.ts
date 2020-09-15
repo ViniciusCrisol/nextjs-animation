@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+
+  padding: 5rem;
 
   display: flex;
   align-items: center;
@@ -10,13 +11,14 @@ export const Container = styled.div`
   justify-content: center;
 
   h1 {
-    font-size: 54px;
-    color: ${({ theme }) => theme.colors.primary};
-    margin: 40px 0;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
   }
 
-  p {
-    font-size: 24px;
-    margin-top: 8px;
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 `;

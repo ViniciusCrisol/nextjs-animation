@@ -8,14 +8,15 @@ export default createGlobalStyle`
   }
 
   body {
-    font-size: 16px;
+    background: #f1f1f1;
     -webkit-font-smoothing: antialiased !important;
     background-color: ${({ theme }) => theme.colors.background};
   }
 
 
-  *, input, button {
-    font-family: Roboto, sans-serif;
+  *, input, button, body {
+    font-size: 16px;
+    font-family: Roboto Mono, sans-serif;
     color: ${({ theme }) => theme.colors.text};
   }
 `;
