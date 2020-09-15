@@ -13,7 +13,7 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ initialData }) => {
-  const { data: teams } = useFetch<TeamProps[]>('/teams', initialData);
+  const { data: teams } = useFetch<TeamProps[]>('/', initialData);
 
   return (
     <Layout>
