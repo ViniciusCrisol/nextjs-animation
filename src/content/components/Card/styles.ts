@@ -13,13 +13,14 @@ export const Container = styled.a<CardProps>`
   margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
-  transition: transform 200ms ease-in-out;
+  transition: transform 220ms ease-in-out;
 
   &:hover {
     transform: scale(1.02);
