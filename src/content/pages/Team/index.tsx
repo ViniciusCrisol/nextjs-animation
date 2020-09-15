@@ -2,7 +2,11 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Team: React.FC = () => {
+interface TeamPageProps {
+  team: TeamProps;
+}
+
+const Team: React.FC<TeamPageProps> = ({ team }) => {
   return (
     <Container>
       <h1>Team</h1>

@@ -1,5 +1,8 @@
 import React from 'react';
 import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+
+import Content from '../../content/pages/Team';
 
 import api from '../../services/api';
 import { useFetch } from '../../hooks/useFetch';
@@ -9,23 +12,20 @@ interface HomeProps {
 }
 
 const Team: NextPage<HomeProps> = ({ initialData }) => {
-  const { data: team } = useFetch<TeamProps>('/', initialData);
+  const router = useRouter();
+  const path = router.query.name;
 
-  return (
-    <div>
-      <h1>{team.name}</h1>
-    </div>
-  );
+  const { data } = useFetch<TeamProps>(`/?name=${path}`, initialData);
+
+  const team = data[0] || initialData;
+
+  return <Content team={team} />;
 };
 
 Team.getInitialProps = async ({ query }) => {
-  console.log();
-
   const response = await api.get(`/?name=${query.name}`);
 
-  console.log(response[0]);
-
-  return { initialData: response.data };
+  return { initialData: response.data[0] };
 };
 
 export default Team;

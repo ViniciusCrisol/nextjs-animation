@@ -7,15 +7,11 @@ import Card from '../../components/Card';
 
 import { Container } from './styles';
 
-interface HomeProps {
+interface HomePageProps {
   teams: TeamProps[];
 }
 
-const Home: React.FC<HomeProps> = ({ teams }) => {
-  if (!teams) {
-    return <Container />;
-  }
-
+const Home: React.FC<HomePageProps> = ({ teams }) => {
   return (
     <Container>
       <h1>Which the best?</h1>

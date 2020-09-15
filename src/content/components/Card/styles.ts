@@ -11,7 +11,6 @@ export const Container = styled.a<CardProps>`
   height: 260px;
 
   margin: 1rem;
-  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 
@@ -27,7 +26,7 @@ export const Container = styled.a<CardProps>`
   }
 
   svg {
-    width: 80%;
-    pointer-events: none;
+    width: 12.5rem;
+    height: 12.5rem;
   }
 `;
