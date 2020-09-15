@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 import Lakers from '../../../assets/lakers.svg';
 import Clippers from '../../../assets/clippers.svg';
