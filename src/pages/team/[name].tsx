@@ -1,6 +1,11 @@
 import React from 'react';
+import { NextPage } from 'next';
 
-const Team: React.FC = () => {
+interface HomeProps {
+  initialData: TeamProps;
+}
+
+const Team: NextPage<HomeProps> = () => {
   return <div />;
 };
 

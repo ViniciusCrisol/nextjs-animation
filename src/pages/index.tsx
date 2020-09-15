@@ -1,13 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
+import { NextPage } from 'next';
 
-import api from '../services/api';
 import { useFetch } from '../hooks/useFetch';
+import api from '../services/api';
 
 import Content from '../content/pages/Home';
 import Layout from '../components/Layout';
 
-const Home = ({ initialData }) => {
+interface HomeProps {
+  initialData: TeamProps[];
+}
+
+const Home: NextPage<HomeProps> = ({ initialData }) => {
   const { data: teams } = useFetch<TeamProps[]>('/teams', initialData);
 
   return (
