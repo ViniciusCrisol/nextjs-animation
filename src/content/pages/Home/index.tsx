@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import Lakers from '../../../assets/lakers.svg';
 import Clippers from '../../../assets/clippers.svg';
@@ -7,12 +8,15 @@ import Card from '../../components/Card';
 
 import { Container } from './styles';
 
-const teams = [
-  { image: Lakers, cardColor: '#fcb827' },
-  { image: Clippers, cardColor: '#ce3d53' },
-];
+interface HomeProps {
+  teams: TeamProps[];
+}
 
-const Home: React.FC = () => {
+const Home: React.FC<HomeProps> = ({ teams }) => {
+  if (!teams) {
+    return <Container />;
+  }
+
   return (
     <Container>
       <h1>Which the best?</h1>
@@ -20,9 +24,10 @@ const Home: React.FC = () => {
       <main>
         {teams.map(team => (
           <Card
+            name={team.name}
             key={team.cardColor}
-            image={team.image}
             cardColor={team.cardColor}
+            image={team.image === 'Lakers' ? Lakers : Clippers}
           />
         ))}
       </main>

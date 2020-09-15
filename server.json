@@ -1,0 +1,6 @@
+{
+  "teams": [
+    { "image": "Lakers", "name": "Lakers", "cardColor": "#fcb827" },
+    { "image": "Clippers", "name": "Clippers", "cardColor": "#ce3d53" }
+  ]
+}

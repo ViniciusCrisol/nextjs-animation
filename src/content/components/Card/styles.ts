@@ -4,7 +4,7 @@ interface CardProps {
   cardColor: string;
 }
 
-export const Container = styled.div<CardProps>`
+export const Container = styled.a<CardProps>`
   background-color: ${({ cardColor }) => cardColor};
 
   width: 260px;
@@ -18,6 +18,7 @@ export const Container = styled.div<CardProps>`
   align-items: center;
   justify-content: center;
 
+  cursor: pointer;
   transition: transform 200ms ease-in-out;
 
   &:hover {
@@ -26,5 +27,6 @@ export const Container = styled.div<CardProps>`
 
   svg {
     width: 80%;
+    pointer-events: none;
   }
 `;
