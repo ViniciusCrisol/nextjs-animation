@@ -27,7 +27,7 @@ const Home: NextPage<HomeProps> = ({ initialData }) => {
 };
 
 Home.getInitialProps = async () => {
-  const response = await api.get('/teams');
+  const response = await api.get('/');
 
   return { initialData: response.data };
 };
