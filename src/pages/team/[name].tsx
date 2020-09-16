@@ -20,10 +20,20 @@ const Team: NextPage<HomeProps> = ({ initialData }) => {
 
   const team = data[0];
 
+  if (!team) {
+    return (
+      <>
+        <Head>
+          <title>loading...</title>
+        </Head>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
-        <title>{team?.name}</title>
+        <title>{team.name}</title>
       </Head>
 
       <Content team={team} />
