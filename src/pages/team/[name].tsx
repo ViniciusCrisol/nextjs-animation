@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
@@ -19,7 +20,15 @@ const Team: NextPage<HomeProps> = ({ initialData }) => {
 
   const team = data[0] || initialData;
 
-  return <Content team={team} />;
+  return (
+    <>
+      <Head>
+        <title>{team.name}</title>
+      </Head>
+
+      <Content team={team} />
+    </>
+  );
 };
 
 Team.getInitialProps = async ({ query }) => {
