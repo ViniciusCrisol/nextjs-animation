@@ -18,7 +18,7 @@ const Team: NextPage<HomeProps> = ({ initialData }) => {
 
   const { data } = useFetch<TeamProps>(`/?name=${path}`, initialData);
 
-  const team = data[0] || initialData;
+  const team = data[0];
 
   return (
     <>
@@ -34,7 +34,7 @@ const Team: NextPage<HomeProps> = ({ initialData }) => {
 Team.getInitialProps = async ({ query }) => {
   const response = await api.get(`/?name=${query.name}`);
 
-  return { initialData: response.data[0] };
+  return { initialData: response.data };
 };
 
 export default Team;
