@@ -23,12 +23,27 @@ const Team: React.FC<TeamPageProps> = ({ team }) => {
         </span>
       </LeftContainer>
 
-      <RightContainer>
+      <RightContainer bgColor={cardColor}>
         <Link href="/">
           <a>
             <strong>«</strong> Back to home
           </a>
         </Link>
+
+        <h1>{name}</h1>
+
+        <span>
+          Do you think {name} is the best team in L.A? <br />
+          If you, vote high now!
+        </span>
+
+        <footer>
+          <Link href="/">
+            <button>Back to home</button>
+          </Link>
+
+          <button>Vote!</button>
+        </footer>
       </RightContainer>
     </Container>
   );

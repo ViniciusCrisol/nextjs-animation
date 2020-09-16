@@ -36,7 +36,7 @@ export const LeftContainer = styled.div<CardProps>`
     padding: 3rem;
     border-radius: 50%;
     background-color: #dfdfdf60;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    border: 2px dashed #fff;
 
     display: flex;
     align-items: center;
@@ -54,7 +54,7 @@ export const LeftContainer = styled.div<CardProps>`
   }
 `;
 
-export const RightContainer = styled.div`
+export const RightContainer = styled.div<CardProps>`
   width: 50%;
   height: 100%;
   min-height: 100vh;
@@ -64,15 +64,67 @@ export const RightContainer = styled.div`
   > a {
     text-decoration: none;
 
-    transition: margin 140ms ease-in-out, opacity 140ms ease-in-out;
+    transition: margin 140ms ease-in-out, opacity 140ms ease-in-out,
+      color 140ms ease-in-out;
 
     strong {
       font-size: 1.4rem;
+
+      transition: color 140ms ease-in-out;
     }
 
     &:hover {
+      color: rgba(0, 0, 0, 0.6);
       margin-left: -0.5rem;
-      opacity: 0.7;
+
+      strong {
+        color: ${({ bgColor }) => bgColor};
+      }
+    }
+  }
+
+  > h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  > span {
+    margin: 1rem 0;
+
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+  }
+
+  > footer {
+    margin-top: 4rem;
+
+    > button {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+
+      height: 3rem;
+      min-width: 7.5rem;
+
+      border: 0;
+      padding: 0 1rem;
+      border-radius: 6px;
+      background: ${({ bgColor }) => bgColor};
+
+      cursor: pointer;
+      transition: filter 200ms, transform 200ms;
+
+      & + button {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        filter: brightness(1.1);
+        transform: translateY(-4px);
+      }
     }
   }
 `;
