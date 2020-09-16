@@ -16,14 +16,14 @@ const Team: NextPage<HomeProps> = ({ initialData }) => {
   const router = useRouter();
   const path = router.query.name;
 
-  const { data } = useFetch<TeamProps>(`/?name=${path}`, initialData);
+  const { data } = useFetch<TeamProps[]>(`/?name=${path}`, initialData);
 
   const team = data[0];
 
   return (
     <>
       <Head>
-        <title>{team.name}</title>
+        <title>{team?.name}</title>
       </Head>
 
       <Content team={team} />
