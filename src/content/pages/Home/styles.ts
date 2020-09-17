@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fadeIn } from '../../../styles/animations';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -10,6 +11,8 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+
+  animation: ${fadeIn} 600ms;
 
   h1 {
     font-size: 1.4rem;

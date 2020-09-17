@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fadeIn } from '../../../styles/animations';
 
 interface CardProps {
   bgColor: string;
@@ -7,6 +8,8 @@ interface CardProps {
 export const Container = styled.div`
   display: flex;
   align-items: center;
+
+  animation: ${fadeIn} 600ms;
 
   @media (max-width: 700px) {
     flex-direction: column;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fadeInUp } from '../../../styles/animations';
 
 interface CardProps {
   cardColor: string;
@@ -19,6 +20,7 @@ export const Container = styled.a<CardProps>`
   justify-content: center;
 
   cursor: pointer;
+  animation: ${fadeInUp} 600ms ease-in-out;
   transition: transform 220ms ease-in-out;
 
   &:hover {
